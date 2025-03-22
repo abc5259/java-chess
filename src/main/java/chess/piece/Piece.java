@@ -38,7 +38,7 @@ public abstract class Piece {
         return this.position.equals(position);
     }
 
-    abstract boolean isMovable(ChessBoard chessBoard, Position to);
+    abstract protected boolean isMovable(ChessBoard chessBoard, Position to);
 
     @Override
     public boolean equals(Object object) {

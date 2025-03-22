@@ -20,7 +20,7 @@ public class Knight extends Piece {
     }
 
     @Override
-    boolean isMovable(ChessBoard chessBoard, Position to) {
+    protected boolean isMovable(ChessBoard chessBoard, Position to) {
         for (Movement movement : MOVEMENTS) {
             Position curr = position;
             if (!curr.canMove(movement)) {

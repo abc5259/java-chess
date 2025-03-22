@@ -44,7 +44,7 @@ class QueenTest {
     void 퀸이_기는_방향에_기물이_있다면_갈_수_없다() {
         //given
         ChessBoard chessBoard = new ChessBoard(List.of(
-                new Pawn(Color.BLACK, C2)
+                new BlackPawn(C2)
         ));
         Queen queen = new Queen(Color.BLACK, B1);
 

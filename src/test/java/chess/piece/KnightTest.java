@@ -38,7 +38,7 @@ class KnightTest {
     void 나이트가_가는방향에_기물이_있더라도_갈_수_있다() {
         //given
         ChessBoard chessBoard = new ChessBoard(List.of(
-                new Pawn(Color.BLACK, B1)
+                new BlackPawn(C2)
         ));
         Knight knight = new Knight(Color.BLACK, A1);
 

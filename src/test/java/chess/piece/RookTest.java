@@ -4,7 +4,6 @@ import static chess.Fixtures.A1;
 import static chess.Fixtures.A8;
 import static chess.Fixtures.B1;
 import static chess.Fixtures.B2;
-import static chess.Fixtures.B3;
 import static chess.Fixtures.B4;
 import static chess.Fixtures.B8;
 import static chess.Fixtures.C1;
@@ -42,7 +41,7 @@ class RookTest {
     void 룩이_기는_방향에_기물이_있다면_갈_수_없다() {
         //given
         ChessBoard chessBoard = new ChessBoard(List.of(
-                new Pawn(Color.BLACK, B3)
+                new BlackPawn(B2)
         ));
         Rook rook = new Rook(Color.BLACK, B1);
 

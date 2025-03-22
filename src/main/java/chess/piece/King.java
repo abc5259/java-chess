@@ -31,4 +31,12 @@ public class King extends Piece {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        if (isColor(Color.BLACK)) {
+            return "k";
+        }
+        return "K";
+    }
 }

@@ -34,4 +34,9 @@ public class WhitePawn extends Pawn {
     protected Movement movement() {
         return Movement.UP;
     }
+
+    @Override
+    public String toString() {
+        return "P";
+    }
 }

@@ -25,10 +25,11 @@ public abstract class Piece {
         if (!isMovable(chessBoard, to)) {
             throw new IllegalArgumentException("해당 목적지로 갈 수 없습니다.");
         }
+        if (chessBoard.isExistPiece(to)) {
+            chessBoard.remove(to);
+        }
         position = to;
     }
-
-    ;
 
     public boolean isColor(Color color) {
         return this.color == color;

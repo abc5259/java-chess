@@ -39,6 +39,9 @@ public abstract class Pawn extends Piece {
                 if (chessBoard.isExistPiece(curr)) {
                     break;
                 }
+                if (curr.equals(to)) {
+                    return true;
+                }
             }
             return curr.equals(to);
         }

@@ -35,4 +35,12 @@ public class Bishop extends Piece {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        if (isColor(Color.BLACK)) {
+            return "b";
+        }
+        return "B";
+    }
 }

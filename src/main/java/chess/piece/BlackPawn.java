@@ -34,4 +34,9 @@ public class BlackPawn extends Pawn {
     protected Movement movement() {
         return Movement.DOWN;
     }
+
+    @Override
+    public String toString() {
+        return "p";
+    }
 }

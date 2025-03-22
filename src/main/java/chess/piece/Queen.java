@@ -36,4 +36,12 @@ public class Queen extends Piece {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        if (isColor(Color.BLACK)) {
+            return "q";
+        }
+        return "Q";
+    }
 }

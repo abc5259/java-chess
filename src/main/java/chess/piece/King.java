@@ -9,7 +9,8 @@ import java.util.Set;
 public class King extends Piece {
 
     private static final Set<Movement> MOVEMENTS = Set.of(
-            Movement.UP, Movement.DOWN, Movement.LEFT, Movement.RIGHT
+            Movement.UP, Movement.DOWN, Movement.LEFT, Movement.RIGHT,
+            Movement.LEFT_UP, Movement.LEFT_DOWN, Movement.RIGHT_UP, Movement.RIGHT_DOWN
     );
 
     public King(Color color, Position position) {

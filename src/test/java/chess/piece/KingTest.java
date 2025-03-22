@@ -18,7 +18,7 @@ class KingTest {
 
     @ParameterizedTest
     @MethodSource("provideMovablePosition")
-    void 킹은_상_하_좌_우_한칸_같은팀의_기물이_없다면_이동할_수_있다(Position from, Position to) {
+    void 킹은_상_하_좌_우_대각선_한칸_같은팀의_기물이_없다면_이동할_수_있다(Position from, Position to) {
         //given
         ChessBoard chessBoard = new ChessBoard(List.of());
         King king = new King(Color.BLACK, from);
@@ -48,7 +48,11 @@ class KingTest {
                 Arguments.of(Fixtures.A1, Fixtures.A2),
                 Arguments.of(Fixtures.B2, Fixtures.B1),
                 Arguments.of(Fixtures.B1, Fixtures.C1),
-                Arguments.of(Fixtures.C2, Fixtures.B2)
+                Arguments.of(Fixtures.C2, Fixtures.B2),
+                Arguments.of(Fixtures.C2, Fixtures.D3),
+                Arguments.of(Fixtures.C2, Fixtures.B2),
+                Arguments.of(Fixtures.C2, Fixtures.B1),
+                Arguments.of(Fixtures.C2, Fixtures.D1)
         );
     }
 }

@@ -24,9 +24,9 @@ public class Knight extends Piece {
         for (Movement movement : MOVEMENTS) {
             Position curr = position;
             if (!curr.canMove(movement)) {
-                break;
+                continue;
             }
-            curr = position.move(movement);
+            curr = curr.move(movement);
             if (curr.equals(to)) {
                 return true;
             }

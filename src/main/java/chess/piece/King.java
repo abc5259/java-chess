@@ -21,7 +21,7 @@ public class King extends Piece {
         for (Movement movement : MOVEMENTS) {
             Position curr = position;
             if (!curr.canMove(movement)) {
-                break;
+                continue;
             }
             curr = curr.move(movement);
             if (curr.equals(to)) {

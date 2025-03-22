@@ -1,11 +1,15 @@
 package chess.piece;
 
 import static chess.Fixtures.A1;
-import static chess.Fixtures.A4;
+import static chess.Fixtures.A8;
 import static chess.Fixtures.B1;
 import static chess.Fixtures.B2;
-import static chess.Fixtures.C2;
+import static chess.Fixtures.B3;
+import static chess.Fixtures.B4;
+import static chess.Fixtures.B8;
+import static chess.Fixtures.C1;
 import static chess.Fixtures.C3;
+import static chess.Fixtures.H2;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import chess.ChessBoard;
@@ -18,43 +22,44 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-class KnightTest {
+class RookTest {
 
     @ParameterizedTest
     @MethodSource("provideMovablePosition")
-    void 나이트는_상하좌우_한칸_후_대각선_모든_방향으로_갈_수_있다(Position from, Position to) {
+    void 룩은_상하좌우_보드_끝까지_갈_수_있다(Position from, Position to) {
         //given
         ChessBoard chessBoard = new ChessBoard(List.of());
-        Knight knight = new Knight(Color.BLACK, from);
+        Rook rook = new Rook(Color.BLACK, from);
 
         //when
-        boolean movable = knight.isMovable(chessBoard, to);
+        boolean movable = rook.isMovable(chessBoard, to);
 
         //then
         assertThat(movable).isTrue();
     }
 
     @Test
-    void 나이트가_가는방향에_기물이_있더라도_갈_수_있다() {
+    void 룩이_기는_방향에_기물이_있다면_갈_수_없다() {
         //given
         ChessBoard chessBoard = new ChessBoard(List.of(
-                new Pawn(Color.BLACK, B1)
+                new Pawn(Color.BLACK, B3)
         ));
-        Knight knight = new Knight(Color.BLACK, A1);
+        Rook rook = new Rook(Color.BLACK, B1);
 
         //when
-        boolean movable = knight.isMovable(chessBoard, C2);
+        boolean movable = rook.isMovable(chessBoard, B4);
 
         //then
-        assertThat(movable).isTrue();
+        assertThat(movable).isFalse();
     }
 
     private static Stream<Arguments> provideMovablePosition() {
         return Stream.of(
-                Arguments.of(A1, C2),
-                Arguments.of(B2, A4),
-                Arguments.of(C3, B1),
-                Arguments.of(B1, C3)
+                Arguments.of(A1, A8),
+                Arguments.of(B2, H2),
+                Arguments.of(C3, C1),
+                Arguments.of(B8, B1),
+                Arguments.of(B8, B4)
         );
     }
 }

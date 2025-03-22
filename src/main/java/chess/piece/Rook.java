@@ -20,7 +20,7 @@ public class Rook extends Piece {
     boolean isMovable(ChessBoard chessBoard, Position to) {
         for (Movement movement : MOVEMENTS) {
             Position curr = position;
-            while (curr.equals(to)) {
+            while (!curr.equals(to)) {
                 if (!curr.canMove(movement)) {
                     break;
                 }
